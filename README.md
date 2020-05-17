@@ -1,6 +1,6 @@
-# vuetify-stylebook
+# vuetify-Storybook
 
-A repository example of Vuetify 2.x configured with Stylebook. Thanks to [this github answer](https://github.com/storybookjs/storybook/issues/7593#issuecomment-548146120), it works.
+A repository example of Vuetify 2.x configured with Storybook. Thanks to [this github answer](https://github.com/storybookjs/storybook/issues/7593#issuecomment-548146120), it works.
 
 ## Project setup
 ```
