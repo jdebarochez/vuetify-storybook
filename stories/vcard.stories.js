@@ -1,8 +1,27 @@
+import { action } from "@storybook/addon-actions";
+import { withKnobs, text, boolean, color } from '@storybook/addon-knobs';
+
 export default {
-  title: "VCard"
+  title: "VCard",
+  decorators: [withKnobs]
 };
 
 export const withText = () => ({
+  methods: { 
+    action1: action("Left button clicked"),
+    action2: action("Right button clicked"),
+  },
+  props: {
+    isDisabled: {
+      default: boolean('Disabled', false)
+    },
+    text: {
+      default: text('Text', 'Button')
+    },
+    color: {
+      default: color('Color', 'grey')
+    }
+  },
   template: `<v-card
   class="mx-auto"
   max-width="344"
@@ -18,13 +37,13 @@ export const withText = () => ({
     <v-list-item-avatar
       tile
       size="80"
-      color="grey"
+      :color="color"
     ></v-list-item-avatar>
   </v-list-item>
 
   <v-card-actions>
-    <v-btn text>Button</v-btn>
-    <v-btn text>Button</v-btn>
+    <v-btn text @click="action1" :disabled="isDisabled"> {{ text }}</v-btn>
+    <v-btn text @click="action2">Button</v-btn>
   </v-card-actions>
 </v-card>`
 });
